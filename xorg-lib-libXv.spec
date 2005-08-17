@@ -17,6 +17,7 @@ BuildRequires:	libtool
 BuildRequires:	pkg-config
 BuildRequires:	xorg-util-util-macros
 BuildRequires:	xorg-proto-videoproto-devel
+Obsoletes:	libXv
 BuildRoot:	%{tmpdir}/libXv-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -36,6 +37,7 @@ Group:		X11/Development/Libraries
 Requires:	xorg-lib-libXv = %{version}-%{release}
 Requires:	xorg-lib-libXext-devel
 Requires:	xorg-proto-videoproto-devel
+Obsoletes:	libXv-devel
 
 %description devel
 X Video extension library.
@@ -55,6 +57,7 @@ Summary:	Static libXv libraries
 Summary(pl):	Biblioteki statyczne libXv
 Group:		Development/Libraries
 Requires:	xorg-lib-libXv-devel = %{version}-%{release}
+Obsoletes:	libXv-static
 
 %description static
 X Video extension library.
