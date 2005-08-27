@@ -1,5 +1,3 @@
-
-#
 Summary:	X Video extension library
 Summary(pl):	Biblioteka rozszerzenia X Video
 Name:		xorg-lib-libXv
@@ -12,13 +10,13 @@ Source0:	http://xorg.freedesktop.org/X11R7.0-RC0/lib/libXv-%{version}.tar.bz2
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 0.19
-BuildRequires:	xorg-util-util-macros
+BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-proto-videoproto-devel
+BuildRequires:	xorg-util-util-macros
 Obsoletes:	libXv
-BuildRoot:	%{tmpdir}/libXv-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
@@ -29,12 +27,11 @@ X Video extension library.
 %description -l pl
 Biblioteka rozszerzenia X Video.
 
-
 %package devel
 Summary:	Header files libXv development
 Summary(pl):	Pliki nag³ówkowe do biblioteki libXv
 Group:		X11/Development/Libraries
-Requires:	xorg-lib-libXv = %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libXext-devel
 Requires:	xorg-proto-videoproto-devel
 Obsoletes:	libXv-devel
@@ -51,12 +48,11 @@ Biblioteka rozszerzenia X Video.
 Pakiet zawiera pliki nag³ówkowe niezbêdne do kompilowania programów
 u¿ywaj±cych biblioteki libXv.
 
-
 %package static
-Summary:	Static libXv libraries
-Summary(pl):	Biblioteki statyczne libXv
-Group:		Development/Libraries
-Requires:	xorg-lib-libXv-devel = %{version}-%{release}
+Summary:	Static libXv library
+Summary(pl):	Biblioteka statyczna libXv
+Group:		X11/Development/Libraries
+Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	libXv-static
 
 %description static
@@ -69,10 +65,8 @@ Biblioteka rozszerzenia X Video.
 
 Pakiet zawiera statyczn± bibliotekê libXv.
 
-
 %prep
 %setup -q -n libXv-%{version}
-
 
 %build
 %{__libtoolize}
@@ -96,21 +90,18 @@ rm -rf $RPM_BUILD_ROOT
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
 
-
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog
-%attr(755,root,wheel) %{_libdir}/libXv.so.*
-
+%attr(755,root,root) %{_libdir}/libXv.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/X11/extensions/*.h
+%attr(755,root,root) %{_libdir}/libXv.so
 %{_libdir}/libXv.la
-%attr(755,root,wheel) %{_libdir}/libXv.so
+%{_includedir}/X11/extensions/*.h
 %{_pkgconfigdir}/xv.pc
 %{_mandir}/man3/*.3*
-
 
 %files static
 %defattr(644,root,root,755)
