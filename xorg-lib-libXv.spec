@@ -1,14 +1,14 @@
 Summary:	X Video extension library
 Summary(pl):	Biblioteka rozszerzenia X Video
 Name:		xorg-lib-libXv
-Version:	0.99.0
-Release:	0.03
+Version:	0.99.1
+Release:	0.1
 License:	MIT
 Group:		X11/Libraries
-Source0:	http://xorg.freedesktop.org/X11R7.0-RC0/lib/libXv-%{version}.tar.bz2
-# Source0-md5:	e808a81da74d8adcd60bdad93ceecabf
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC1/lib/libXv-%{version}.tar.bz2
+# Source0-md5:	e2000d3d8ac1e3649902e0ea49883569
 URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 0.19
@@ -79,6 +79,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
+	libmandir=%{_mandir}/man3 \
 	pkgconfigdir=%{_pkgconfigdir}
 
 %clean
@@ -98,7 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libXv.la
 %{_includedir}/X11/extensions/*.h
 %{_pkgconfigdir}/xv.pc
-%{_mandir}/man3/*.3*
+%{_mandir}/man3/*.3x*
 
 %files static
 %defattr(644,root,root,755)
