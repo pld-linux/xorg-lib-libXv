@@ -25,8 +25,8 @@ X Video extension library.
 Biblioteka rozszerzenia X Video.
 
 %package devel
-Summary:	Header files libXv development
-Summary(pl):	Pliki nag³ówkowe do biblioteki libXv
+Summary:	Header files for libXv library
+Summary(pl):	Pliki nag³ówkowe biblioteki libXv
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libXext-devel
@@ -37,7 +37,7 @@ Obsoletes:	libXv-devel
 X Video extension library.
 
 This package contains the header files needed to develop programs that
-use these libXv.
+use libXv.
 
 %description devel -l pl
 Biblioteka rozszerzenia X Video.
