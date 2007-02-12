@@ -1,5 +1,5 @@
 Summary:	X Video extension library
-Summary(pl.UTF-8):   Biblioteka rozszerzenia X Video
+Summary(pl.UTF-8):	Biblioteka rozszerzenia X Video
 Name:		xorg-lib-libXv
 Version:	1.0.3
 Release:	1
@@ -26,7 +26,7 @@ Biblioteka rozszerzenia X Video.
 
 %package devel
 Summary:	Header files for libXv library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki libXv
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libXv
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libXext-devel
@@ -47,7 +47,7 @@ używających biblioteki libXv.
 
 %package static
 Summary:	Static libXv library
-Summary(pl.UTF-8):   Biblioteka statyczna libXv
+Summary(pl.UTF-8):	Biblioteka statyczna libXv
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	libXv-static
