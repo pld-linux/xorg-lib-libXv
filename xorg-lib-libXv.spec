@@ -1,5 +1,5 @@
 Summary:	X Video extension library
-Summary(pl):	Biblioteka rozszerzenia X Video
+Summary(pl.UTF-8):   Biblioteka rozszerzenia X Video
 Name:		xorg-lib-libXv
 Version:	1.0.3
 Release:	1
@@ -21,12 +21,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 X Video extension library.
 
-%description -l pl
+%description -l pl.UTF-8
 Biblioteka rozszerzenia X Video.
 
 %package devel
 Summary:	Header files for libXv library
-Summary(pl):	Pliki nag³ówkowe biblioteki libXv
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe biblioteki libXv
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	xorg-lib-libXext-devel
@@ -39,15 +39,15 @@ X Video extension library.
 This package contains the header files needed to develop programs that
 use libXv.
 
-%description devel -l pl
+%description devel -l pl.UTF-8
 Biblioteka rozszerzenia X Video.
 
-Pakiet zawiera pliki nag³ówkowe niezbêdne do kompilowania programów
-u¿ywaj±cych biblioteki libXv.
+Pakiet zawiera pliki nagÅ‚Ã³wkowe niezbÄ™dne do kompilowania programÃ³w
+uÅ¼ywajÄ…cych biblioteki libXv.
 
 %package static
 Summary:	Static libXv library
-Summary(pl):	Biblioteka statyczna libXv
+Summary(pl.UTF-8):   Biblioteka statyczna libXv
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	libXv-static
@@ -57,10 +57,10 @@ X Video extension library.
 
 This package contains the static libXv library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteka rozszerzenia X Video.
 
-Pakiet zawiera statyczn± bibliotekê libXv.
+Pakiet zawiera statycznÄ… bibliotekÄ™ libXv.
 
 %prep
 %setup -q -n libXv-%{version}
