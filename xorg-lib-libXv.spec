@@ -89,16 +89,17 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING ChangeLog
+%doc AUTHORS COPYING ChangeLog
 %attr(755,root,root) %{_libdir}/libXv.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libXv.so.1
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libXv.so
 %{_libdir}/libXv.la
-%{_includedir}/X11/extensions/*.h
+%{_includedir}/X11/extensions/Xvlib.h
 %{_pkgconfigdir}/xv.pc
-%{_mandir}/man3/*.3x*
+%{_mandir}/man3/Xv*.3x*
 
 %files static
 %defattr(644,root,root,755)
