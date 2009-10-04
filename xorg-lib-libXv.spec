@@ -1,5 +1,5 @@
-Summary:	X Video extension library
-Summary(pl.UTF-8):	Biblioteka rozszerzenia X Video
+Summary:	X Video (Xv) extension library
+Summary(pl.UTF-8):	Biblioteka rozszerzenia X Video (Xv)
 Name:		xorg-lib-libXv
 Version:	1.0.5
 Release:	1
@@ -14,15 +14,16 @@ BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-proto-videoproto-devel
-BuildRequires:	xorg-util-util-macros >= 1.1.0
+BuildRequires:	xorg-util-util-macros >= 1.3
 Obsoletes:	libXv
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-X Video extension library.
+libXv is a library for the X Video (Xv) extension to the X Window
+System.
 
 %description -l pl.UTF-8
-Biblioteka rozszerzenia X Video.
+libXv to biblioteka rozszerzenia X Video (Xv) systemu X Window.
 
 %package devel
 Summary:	Header files for libXv library
@@ -34,13 +35,14 @@ Requires:	xorg-proto-videoproto-devel
 Obsoletes:	libXv-devel
 
 %description devel
-X Video extension library.
+libXv is a library for the X Video (Xv) extension to the X Window
+System.
 
 This package contains the header files needed to develop programs that
 use libXv.
 
 %description devel -l pl.UTF-8
-Biblioteka rozszerzenia X Video.
+libXv to biblioteka rozszerzenia X Video (Xv) systemu X Window.
 
 Pakiet zawiera pliki nagłówkowe niezbędne do kompilowania programów
 używających biblioteki libXv.
@@ -53,12 +55,13 @@ Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	libXv-static
 
 %description static
-X Video extension library.
+libXv is a library for the X Video (Xv) extension to the X Window
+System.
 
 This package contains the static libXv library.
 
 %description static -l pl.UTF-8
-Biblioteka rozszerzenia X Video.
+libXv to biblioteka rozszerzenia X Video (Xv) systemu X Window.
 
 Pakiet zawiera statyczną bibliotekę libXv.
 
@@ -89,7 +92,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog
+%doc AUTHORS COPYING ChangeLog README
 %attr(755,root,root) %{_libdir}/libXv.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libXv.so.1
 
