@@ -1,20 +1,20 @@
 Summary:	X Video (Xv) extension library
 Summary(pl.UTF-8):	Biblioteka rozszerzenia X Video (Xv)
 Name:		xorg-lib-libXv
-Version:	1.0.5
-Release:	2
+Version:	1.0.6
+Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXv-%{version}.tar.bz2
-# Source0-md5:	1d97798b1d8bbf8d9085e1b223a0738f
+# Source0-md5:	e292445a64b63e918bbc8b6aae6391dd
 URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf >= 2.57
+BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-proto-videoproto-devel
-BuildRequires:	xorg-util-util-macros >= 1.3
+BuildRequires:	xorg-util-util-macros >= 1.8
 Obsoletes:	libXv
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -81,8 +81,7 @@ Pakiet zawiera statyczną bibliotekę libXv.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	pkgconfigdir=%{_pkgconfigdir}
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
