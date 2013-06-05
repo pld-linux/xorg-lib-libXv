@@ -12,6 +12,7 @@ BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
+BuildRequires:	sed >= 4.0
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-proto-videoproto-devel
 BuildRequires:	xorg-util-util-macros >= 1.8
@@ -67,6 +68,9 @@ Pakiet zawiera statyczną bibliotekę libXv.
 
 %prep
 %setup -q -n libXv-%{version}
+
+# support __libmansuffix__ with "x" suffix (per FHS 2.3)
+%{__sed} -i -e 's,\.so man__libmansuffix__/,.so man3/,' man/*.man
 
 %build
 %{__libtoolize}
