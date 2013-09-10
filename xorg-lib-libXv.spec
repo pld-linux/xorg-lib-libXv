@@ -1,21 +1,23 @@
 Summary:	X Video (Xv) extension library
 Summary(pl.UTF-8):	Biblioteka rozszerzenia X Video (Xv)
 Name:		xorg-lib-libXv
-Version:	1.0.9
+Version:	1.0.10
 Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXv-%{version}.tar.bz2
-# Source0-md5:	3f642e1d868a2289769b983cf346e7bb
+# Source0-md5:	e0af49d7d758b990e6fef629722d4aca
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	sed >= 4.0
+BuildRequires:	xorg-lib-libX11-devel >= 1.6
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-proto-videoproto-devel
 BuildRequires:	xorg-util-util-macros >= 1.8
+Requires:	xorg-lib-libX11 >= 1.6
 Obsoletes:	libXv
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -31,6 +33,7 @@ Summary:	Header files for libXv library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libXv
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	xorg-lib-libX11-devel >= 1.6
 Requires:	xorg-lib-libXext-devel
 Requires:	xorg-proto-videoproto-devel
 Obsoletes:	libXv-devel
